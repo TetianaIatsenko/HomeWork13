@@ -12,6 +12,7 @@ public class Main {
 
     private static void printOpenTodos() throws IOException, URISyntaxException, InterruptedException {
         List<Todos> list = HttpUtils.sendGetTodosByUserId(URL_USERS, 1);
+        System.out.println("List of not completed Todos user 1:");
         list.stream().filter(n-> n.isCompleted() == false).forEach(n-> System.out.println(n));
     }
 }
